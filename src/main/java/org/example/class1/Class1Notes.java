@@ -39,7 +39,7 @@ public class Class1Notes {
      * maven command line: mvn clean, mvn test, ...
      *
      *
-     * 2. git
-     * git: distribution control
+     * 2. git: distribution control tool
+     *
      */
 }
