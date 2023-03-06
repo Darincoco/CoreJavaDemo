@@ -1,10 +1,9 @@
 package org.example.class2;
 
-import java.beans.Introspector;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class2Note {
+public class Class2Notes {
 /*
 1. Java, compile once, run on any platform(JVM)
     .java file -> .class file(byteCode) -> machine code
@@ -134,7 +133,7 @@ public class Class2Note {
 //        System.out.println("List in class is:" + test.getList());
 
         methodForStatic();
-        Class2Note obj = new Class2Note();
+        Class2Notes obj = new Class2Notes();
         obj.methodForNonStaic();
     }
 }
