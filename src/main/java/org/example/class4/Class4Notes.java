@@ -69,16 +69,40 @@ public class Class4Notes {
         extends Thread: create a new class directly
         implements Runnable interface: when creating a Thread class, need to pass a Runnable class into Thread Class
         implements Callable interface: when creating a Thread class, need to pass a Runnable class into Thread Class,
-         in this case, it is created by a Callable class. ALSO, Callable class need to return sth in run method
+        in this case, it is created by a Callable class. ALSO, Callable class need to return sth in run method
         thread pool: utilize a number of thread for tasks, when tasks finished, return these thread back to pool. It
         will be in charge of creation and destroy.
         why need it? create a thread and destroy cost a lot of computation power
         Params in ThreadPoolExecutor:
-            corePoolSize, maximumPoolSize, keepAliveTime, TimeUnit, workQueue, threadFactory, handler
+            corePoolSize: number of threads always exist even when idle,
+            maximumPoolSize: max number of threads can use(corePoolSize + temporary size),
+            keepAliveTime: how long the temporary thread will exist,
+            TimeUnit,
+            workQueue: a blocking queue that stores tasks when coolPoolSize's threads are all working(FIFO),
+            threadFactory,
+            handler: when tasks exceed the maximumPoolSize, the extra task will be handled by handler
+                    AbortPolicy(default): throw a RejectedExecutionException
+                    CallerRunPolicy: use main thread that executes the threadPool to process the task
+                    DiscardPolicy: discard the current task
+                    DiscardOldestPolicy: discard the oldest tasks in the working queue and execute again
+            Pre-defined threadPool:
+                newFixedThreadPool(n): n fixed threads and maximum thread is also n, which means no temporary thread
+                    potential problem: only has fixed threads, and working queue is an unlimited linkedBlockingQueue,
+                    can easily cause out of memory problem if add too many tasks
+                newSingleThreadPool: only 1 core thread and no temporary thread
+                    potential problem: working queue is an unlimited linkedBlockingQueue, can easily cause
+                    out of memory problem if add too many tasks
+                newCachedThreadPool: no core thread, no limit on temporary threads, each temporary thread exist for 60s
+                    potential problem: theoretically can create unlimited temporary threads(actually an object in JVM),
+                    these objects will also cause out of memory questions
+                newScheduleThreadPool: limited core thread and unlimited temporary thread
+                    potential problem: theoretically can create unlimited temporary threads(actually an object in JVM),
+                    these objects will also cause out of memory questions
 
         Runnable vs Callable:
         Runnable: override run method, no return, no exception
         Callable: override call method, has return, need try catch exception
+
  */
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
@@ -105,7 +129,29 @@ public class Class4Notes {
 //        t3.start();
 //        System.out.println(task.get());
 
-//        new ThreadPoolExecutor();
+//        ExecutorService threadPool = new ThreadPoolExecutor(
+//                2,
+//                5,
+//                2L,
+//                TimeUnit.SECONDS,
+//                new ArrayBlockingQueue<>(4),
+//                Executors.defaultThreadFactory(),
+//                new ThreadPoolExecutor.AbortPolicy()
+//        );
+//
+//        for (int i = 1; i < 10; i++) {
+//            int taskNum = i;
+//            threadPool.execute(() -> {
+//                System.out.println(Thread.currentThread().getName() + " is working on " + taskNum + " task");
+//            });
+//        }
+//
+//        threadPool.shutdown();
+
+        ExecutorService tp1 = Executors.newFixedThreadPool(2);
+        ExecutorService tp2 = Executors.newSingleThreadExecutor();
+        ExecutorService tp3 = Executors.newCachedThreadPool();
+        ExecutorService tp4 = Executors.newScheduledThreadPool(2);
     }
 }
 
