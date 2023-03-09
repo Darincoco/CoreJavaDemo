@@ -14,8 +14,8 @@ public class Class1Notes {
      * Inside a maven project
      * (a) Main file: for java developing code
      *      Resources file: static resources(web page, pics, xml file)
-     * (b)Test file: for java test cases
-     * (c)POM(Project Object Model).xml:
+     * (b) Test file: for java test cases
+     * (c) POM(Project Object Model).xml:
      *             structure:  project meta data -- Project name, version etcOutput file type: JAR, WAR, ...
      *                         dependencies -- List of projects we depend on Spring, Hibernate, etc...
      *                         plug ins -- Additional custom tasks to run:generate JUnit test reports etc...

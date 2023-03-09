@@ -158,6 +158,8 @@ public class Class3Notes {
                     Set<Integer> tr2 = new TreeSet<>((a, b) -> b - a);  // not recommended, will cause overflow problem
 
     Functional Interface (interface can have many methods as wanted)
+        @functionalInterface is optional, when annotated with functionalInterface, it will let the programme know it is
+        a functional interface and help we check the interface correctness
         it has only one abstract method, if 2 methods in this interface, will throw error
         it usually combine functional interface with lambda expression, in another word, lambda express is the
         implementation of functional interface
