@@ -82,7 +82,7 @@ public class Class1Notes {
      *      Integer c = New Integer(10);
      *      Integer d = Integer.valueOf(10)；
      *      System.out.println(a == b);   T
-     *      System.out.println(a == c);   F, c is in the Integer Pool
+     *      System.out.println(a == c);   F, a is in the Integer Pool
      *      System.out.println(a == d);   T, d is put to the Integer Pool
      *
      *      Integer e = 200;
@@ -91,7 +91,8 @@ public class Class1Notes {
      *
      *
      * 6. Equals and hashCode
-     * After override equals(), need to override hashCode()
+     * After override equals(), need to override hashCode(), if only overrides equals, hashCode() will still hash two
+     * keys to different bucket
      * If there is no equals() in a class, java will call Object.equals(), which compares the object address
      *
      *
@@ -128,7 +129,8 @@ public class Class1Notes {
      *
      *
      * 8. Comparator and Comparable:
-     * Comparable is an interface used to define orders, but only one chance compare
+     * Comparable is an interface used to define orders, but only one chance compare. The class itself must implement
+     *            the Comparable interface to compare its instances.
      * Comparator is an interface used to define orders, but can override Comparable defined in the class
      *            can also use lambda expression, much faster and convenient
      *            we can set up different comparator to compare with different aspects
@@ -185,8 +187,6 @@ public class Class1Notes {
         set.add(new Node(3, 3));
         set.add(new Node(4, 4));
         System.out.println(set.stream().findFirst().get().x);  // error, because no order in class Node
-
-
     }
 
     public void appendStr(String str) {

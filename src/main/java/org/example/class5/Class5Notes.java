@@ -92,12 +92,12 @@ public class Class5Notes {
     ** CompletableFuture can combine the results of different tasks using thenCompose, thenCombine **
 
     Research on thenCompose(), thenCombine():
-        thenCompose()
-        thenCombine()
+        thenCompose(): is used when the result of one future is needed to compute another future
+        thenCombine(): is used when the results of two or more futures need to be combined
 
     Method differences: allOf, anyOf
-        allOf: do sth after all tasks
-        anyOf: do sth after any of task in them
+        allOf: is used to wait for the completion of multiple futures
+        anyOf: is used to wait for the completion of the first future that completes
 
 
 2. Lock

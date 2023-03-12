@@ -20,7 +20,7 @@ public class Class2Notes {
         result: bootstrap class loader -> extension class loader -> application class loader
 
     Run time data area
-        Method area: store all class level data, run-time constant pool, field. and method data...
+        Method area: store all class level data(defined with static), run-time constant pool, field. and method data...
         Heap area: new keyword to create object, this object will in heap area
         Stack area: Stack frame AKA call stack(info of method call)
         PC Register: multiple threads, pc register -> jvm instruction

@@ -161,7 +161,7 @@ public class Class3Notes {
         @functionalInterface is optional, when annotated with functionalInterface, it will let the programme know it is
         a functional interface and help we check the interface correctness
         it has only one abstract method, if 2 methods in this interface, will throw error
-        it usually combine functional interface with lambda expression, in another word, lambda express is the
+        we usually combine functional interface with lambda expression, in another word, lambda express is the
         implementation of functional interface
 
         default concrete method: we can have as many concrete method as we want using default keyword, which is not
