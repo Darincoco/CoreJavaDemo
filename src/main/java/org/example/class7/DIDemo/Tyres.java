@@ -2,7 +2,6 @@ package org.example.class7.DIDemo;
 
 import org.springframework.stereotype.Component;
 
-@Component
 public class Tyres {
 
     String name;

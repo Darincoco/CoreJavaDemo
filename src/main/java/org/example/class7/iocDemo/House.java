@@ -8,6 +8,7 @@ public class House {
     Livingroom livingroom;
 
     public House(Bathroom bathroom, Livingroom livingroom) {
+        System.out.println("instantiated via constructor");
         this.bathroom = bathroom;
         this.livingroom = livingroom;
     }

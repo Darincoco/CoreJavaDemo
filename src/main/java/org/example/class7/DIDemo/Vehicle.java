@@ -1,7 +1,6 @@
 package org.example.class7.DIDemo;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -9,6 +8,7 @@ public class Vehicle {
     IEngine engine;
     Tyres tyre;
 
+    @Autowired
     public Vehicle(IEngine engine, Tyres tyre)
     {
         System.out.println("instantiated via constructor");
@@ -16,7 +16,9 @@ public class Vehicle {
         this.tyre = tyre;
     }
 
-    public Vehicle() {}
+    public Vehicle() {
+        System.out.println("via null constructor");
+    }
 
     @Override
     public String toString()
