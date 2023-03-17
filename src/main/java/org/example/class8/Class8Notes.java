@@ -42,10 +42,14 @@ public class Class8Notes {
     @PreDestroy: perform customized destroy method with this annotation
 
 
-5.
+5. AOP (aspect oriented programming)
+    Aspect: cut across concern, things to concern, like logging, security, transaction, using @Aspect
+    Advice: @Before @After @AfterReturn @AfterThrowing @Around
+    JoinPoint: a point during execution of program
+    Pointcut: predicate about matches join points, expression matches join points
+    Target: place we want to add AOP logic
 
 
-4.
  */
     public static void main(String[] args) {
 
