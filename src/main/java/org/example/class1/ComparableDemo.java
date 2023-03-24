@@ -15,7 +15,7 @@ public class ComparableDemo {
         list.add(new Movie("Return of the Jedi", 8.4, 1983));
 
         Collections.sort(list);
-        System.out.println("List sorting after comparable's way");
+        System.out.println("List sorting after comparable way");
         System.out.println(list.stream().collect(Collectors.toList()));
 
         NameComparator nameComparator = new NameComparator();
