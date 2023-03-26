@@ -25,5 +25,49 @@ public class Class11Notes {
     Hibernate vs JPA:
         Hibernate: implementation of JPA
 
+    Hibernate Architecture:
+        Configuration -> Session Factory -> Session -> query -> database
+                                               ^
+                                               |
+                                           Java Object from Java app
+
+    Entity LifeCycle:
+        Transient
+        Persistent: object stored/ processed by session
+        Detached: call evict method, object then in detached stage
+        Removed: object removed from database, will in removed
+
+    Mapping:
+        OneToOne: husband <-> wife                      eager default
+        ManyToOne: Accounts -> Employee                 eager default
+        OneToMany: Employee -> Accounts                 lazy default
+        ManyToMany: Reader <-> Subscription             lazy default
+
+    Cascade Type:
+        Persist: used to save
+        Merge: used to update database with new entity
+        Refresh: opposite with merge
+        Remove
+        Detach
+        All
+
+    Fetch type:
+        lazy loading: load the single object -> eager!
+        eager loading: load the object collections -> lazy!
+
+    First level cache / Second level cache:
+        Session level Cache(first level): first come to session to find data, open by default
+        Session Factory Cache(second level): if first level cache miss, come to session factory to find data,
+        close by default, globally available
+        If both cache miss, go to database find data
+        default cache: EhCache, can change to OSCache, Redis
+
+    Hibernate Query:
+        Criteria Queries:
+        HQL: Hibernate Query Language:
+        Native query: can use the query from base database
+
+    Usage (from no to yes):
+        jdbc -> Hibernate -> spring data JPA / Mongo ...
  */
 }
