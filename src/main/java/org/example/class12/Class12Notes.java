@@ -81,13 +81,22 @@ public class Class12Notes {
 
 
 8. Spring Cloud
-    Config server: Config server
-    Service discovery: Eureka, Consoul, Zookeeper
+    Config server:
+        Config server
+        Spring Cloud Config is Spring's client/server approach for storing and serving distributed configurations
+        across multiple applications and environments.
+    Service discovery:
+        Service Discovery is one dedicated server responsible to maintain the registry of all the Microservice that
+        has been deployed and removed. This will act like a phone book of all other applications/microservices.
+        Eureka, Consoul, Zookeeper
     Zipkin and Sleuth: tracing system
     Ribbon: Client side load balancer
-    ELK: Kibana, Logstash, Elastic Search
+    ELK:
+        Kibana, Logstash, Elasticsearch
+        data manipulation of unstructured data to structured is done by Logstash. Logs will be stored on client side.
+        And use Kibana to see the indexed data
     Circuit Breaker: (default tolerance proxy) fall back
         Hystrix -> Resilience4j
-
+        Allows to prevent cascading failures in microservices architecture by invoking remote services through a proxy.
  */
 }
