@@ -89,7 +89,7 @@ public class Class12Notes {
         Service Discovery is one dedicated server responsible to maintain the registry of all the Microservice that
         has been deployed and removed. This will act like a phone book of all other applications/microservices.
         Eureka, Consoul, Zookeeper
-    Zipkin and Sleuth: tracing system
+    Zipkin and Sleuth: tracing system(transactions, logs)
     Ribbon: Client side load balancer
     ELK:
         Kibana, Logstash, Elasticsearch
