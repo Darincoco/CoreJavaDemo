@@ -13,7 +13,7 @@ import java.util.function.Predicate;
 
 public class Class3Notes {
 /*
-1. Exception: can be handles (while errors can not be handled)
+1. Exception: can be handled (while errors can not be handled)
               But error and exception both can be throw because they are from throwable
 
                            ┌─────────┐

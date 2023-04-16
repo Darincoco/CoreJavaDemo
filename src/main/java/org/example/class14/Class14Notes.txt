@@ -1,0 +1,29 @@
+1. Environment
+    Dev Environment
+        developer works on, interact with it very frequently
+    Test Environment/ Integration Env
+        do integration test, penetration test
+        tester, QA, BA, product manager works on it
+        will test on 2 weeks
+    User Acceptance Test (UAT)/ Staging/ Pre-product
+        intended user tests on it
+        in internal network
+        deploy period month
+    Production Env
+        release, deploy project to public for months
+        real world user
+
+
+2. CI/CD pipeline
+    CI: Continuous Integration
+    CD: Continuous Delivery/ Deployment
+    tools: jenkins
+    procedure: Git -> build(maven, Gradle) ->
+                unit test/ integration(Junit, Mockito) ->
+                report code(Jacoco, Spotbugs) ->
+                package(Maven, Gradle) ->
+                install/ upload(AWS ECR...) ->
+                deployment(AWS ECS, EC2, K8s)
+
+
+3. Monitor

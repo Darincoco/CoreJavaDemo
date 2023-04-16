@@ -1,0 +1,23 @@
+1. Security
+    Authentication vs Authorization
+        Authentication: validate the user
+        Authorization: check permission
+
+    Encryption, Hashing, Encoding
+        Encryption: have decryption, use key to encrypt/ decrypt,
+                    Symmetric: encryption decryption keys the same
+                    Asymmetric: encryption decryption key different, private key(keep), public key(share)
+                                http -> https(secured version)
+                    algorithm: AES, 3-DES, SNOW / RSA
+        Hashing: one way, no decryption, lose the data
+                client send data to server, send hashed data to server; after server receives the data, hash it as well,
+                compare the hash data with origin hash data to check if it is modified
+                algorithm: MD5, SHA...
+                usage: data integration / password storage / file management
+                rainbow table
+        Encoding:
+                algorithm: base64...
+                use case: url encoding
+
+    JWT: header / payload / verify signature
+    Oauth2.0: third party validation

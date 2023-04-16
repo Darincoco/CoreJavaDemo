@@ -67,9 +67,12 @@ public class Class4Notes {
 
     4 ways to create thread:
         extends Thread: create a new class directly
+
         implements Runnable interface: when creating a Thread class, need to pass a Runnable class into Thread Class
+
         implements Callable interface: when creating a Thread class, need to pass a Runnable class into Thread Class,
         in this case, it is created by a Callable class. ALSO, Callable class need to return sth in run method
+
         thread pool: utilize a number of thread for tasks, when tasks finished, return these thread back to pool. It
         will be in charge of creation and destroy.
         why need it? create a thread and destroy cost a lot of computation power
